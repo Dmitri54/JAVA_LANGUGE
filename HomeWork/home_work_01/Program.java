@@ -50,7 +50,7 @@ public class Program {
         System.out.println("массив m1");
         System.out.println(Arrays.toString(m1));
 
-        int long_m2 = (32768 + i) - (32768/n + (i - 1)/n);
+        int long_m2 = (32768 + i) - (32768/n + (i - 1)/n); // Длинна массива чисел некратных n, от Short.MIN_VALUE до i.
         int [] m2 = new int[long_m2];
         int index2 = 0;
         while (i >= Short.MIN_VALUE){

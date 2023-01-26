@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-26T09:51:00.987312900Z</date>
+  <millis>1674726660987</millis>
+  <nanos>312900</nanos>
+  <sequence>0</sequence>
+  <logger>lessons.java_projects_02_1.Ex005_Logger</logger>
+  <level>WARNING</level>
+  <class>lessons.java_projects_02_1.Ex005_Logger</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Тестовое логирование 1</message>
+</record>
+<record>
+  <date>2023-01-26T09:51:01.123396600Z</date>
+  <millis>1674726661123</millis>
+  <nanos>396600</nanos>
+  <sequence>1</sequence>
+  <logger>lessons.java_projects_02_1.Ex005_Logger</logger>
+  <level>INFO</level>
+  <class>lessons.java_projects_02_1.Ex005_Logger</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Тестовое логирование 2</message>
+</record>
+</log>

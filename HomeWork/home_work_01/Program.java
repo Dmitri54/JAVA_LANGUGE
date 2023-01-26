@@ -19,9 +19,9 @@ public class Program {
            
         int i = new Random().nextInt(2000); // Выбросит случайное целое число в диапазоне от 0 до 2000 и сохранить в i
         System.out.println("i = " + i);
-        // System.out.println(Integer.toBinaryString(i)); // Преставление числа в двоичном виде.
+        // System.out.println(Integer.toBinaryString(i)); // Представление числа в двоичном виде.
         // String ibinaty = Integer.toBinaryString(i);
-        // System.out.println(ibinaty); // Преставление числа в двоичном виде.
+        // System.out.println(ibinaty); // Представление числа в двоичном виде.
        
         int n = 0;
         while (i != 1) {

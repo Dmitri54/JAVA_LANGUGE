@@ -21,7 +21,7 @@
 // String (Пример работы со строками.)
 // Создать строку из 1 млн плюсиков. Как?
 
-package lessons.java_projects_02;
+// package lessons.java_projects_02;
 
 /**
  * Innerprogram

@@ -20,7 +20,6 @@ public class Program02 {
         if (checkForRotation(str1, str2))
         {
 		    System.out.println("Вторая строка "+str2+" существует в новой строке.");	
-            System.out.println("\nСтроки");
         }
         else
         {

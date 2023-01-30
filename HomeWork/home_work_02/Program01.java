@@ -42,6 +42,20 @@ public class Program01 {
 
         String strRev = builder2.toString();
         System.out.println(reverseStr(strRev)); // 109.1eslaf!olleH&7
+       
+    // 2. Напишите программу, чтобы проверить, являются ли две данные строки вращением друг друга 
+        //   (вхождение в обратном порядке).
+        
+        System.out.println("Данные строки: " + builder1.toString() + "  и  " + reverseStr(strRev));
+        System.out.println("\nКонкатенация первой строки дважды: "+ builder1.toString() + builder1.toString());
+        if (checkForRotation(builder1.toString(), builder2.toString())){
+            System.out.println("Вторая строка "+ reverseStr(strRev) +" существует в новой строке.");	
+        }
+        else
+        {
+            System.out.println("Вторая строка "+builder2.toString()+"  не существует в новой строке.");	
+            System.out.printf("\nСтроки не являются поворотами друг друга");
+        }
     }
 
     private static String reverseStr(String s) {
@@ -49,9 +63,9 @@ public class Program01 {
         return "" + s.charAt(s.length() - 1) + reverseStr(s.substring(0, s.length() - 1)); // Recursive step
       
     }
-    
-    // 2. Напишите программу, чтобы проверить, являются ли две данные строки вращением друг друга 
-        //   (вхождение в обратном порядке). 
-       
+
+    static boolean checkForRotation (String str1, String str2){
+            return (str1.length() == str2.length()) && ((str1 + str1).indexOf(str2) != -1);
+    }
     
 }

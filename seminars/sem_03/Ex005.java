@@ -1,3 +1,5 @@
+// Коллекции. Функционал.
+
 package seminars.sem_03;
 
 import java.util.Arrays;
@@ -8,9 +10,11 @@ public class Ex005 {
         StringBuilder day = new StringBuilder("28");
         StringBuilder month = new StringBuilder("9");
         StringBuilder year = new StringBuilder("1990");
-        List<StringBuilder> d = Arrays.asList(day, month, year);
+        StringBuilder[] date = new StringBuilder[] {day, month, year};
+        List<StringBuilder> d = Arrays.asList(date);
+        // List<StringBuilder> d = Arrays.asList(day, month, year);
         System.out.println(d); // [28, 9, 1990]
-        day = new StringBuilder("09"); // Не добавляет.
-        System.out.println(d); // [28, 9, 1990] // Должно быть [29, 9, 1990]
+        date[1] = new StringBuilder("09");
+        System.out.println(d); // [28, 09, 1990] // Должно быть [29, 9, 1990]
     }
 }

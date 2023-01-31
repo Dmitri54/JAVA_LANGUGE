@@ -1,3 +1,5 @@
+// Коллекции. Функционал.
+
 package seminars.sem_03;
 
 import java.util.Arrays;

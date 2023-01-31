@@ -16,7 +16,6 @@ public class Ex002 {
         // Прокт не будет работать, если указано ArrayList<Integer> list = new ArrayList<Integer>();
         // т.к. я метод будет ждать Integer, а не String.
  
- 
         for (Object o : list) {
             System.out.println(o); // 2809
         }

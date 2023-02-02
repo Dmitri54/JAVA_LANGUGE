@@ -1,6 +1,6 @@
 // Как увеличить размер массива?
 
-package seminars.sem_03;
+package lessons.java_projects_03;
 
 public class Ex001 {
     static int[] AddItemInArray(int[] array, int item) {

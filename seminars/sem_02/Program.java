@@ -8,7 +8,7 @@
  * String s = ""; - через String.
  * s += "!";
  * Минус, если нужно добавить один символ к строке, то будет создана новая сторока с этим символом, 
- * а стара будет удалена. На выполнение этих операций тратиться много времени и требует много памяти.
+ * а старая будет удалена. На выполнение этих операций тратиться много времени и требует много памяти.
  */
 
 package seminars.sem_02;
@@ -116,7 +116,7 @@ package seminars.sem_02;
 //         System.out.println(sb2); // 5AfalseHello!1.23
 
 //         // System.out.println(sb.equals(sb2)); // false - т.к. StringBuilder это объект, а не String.
-//         // .equals() - сравнит дву строки сформированные StringBuilder().
+//         // .equals() - сравнит две строки сформированные StringBuilder().
 //         System.out.println(sb == sb2); // false
 //         System.out.println(sb.toString().equals(sb2.toString())); // true
 //         // .toString() - переведет sb в String и уже к String я применяю метод .equals() в параметрах 

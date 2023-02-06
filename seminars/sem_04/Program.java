@@ -84,17 +84,17 @@ public class Program {
 
     public static void main(String[] args) {
         
-        // try {
-        //     FileWriter fw = new FileWriter("sem_03_db.sql");
-        //     fw.append("Петров А.А." + " 56 лет " + " Мужской");
-        //     fw.append("Иванов Б.Б." + " 56 лет " + " Мужской");
-        //     fw.append("Сидоров В.В." + " 56 лет " + " Мужской");
-        //     fw.append(" В.В." + " 56 лет " + " Мужской");
-        //     fw.append("Сидоров В.В." + " 56 лет " + " Мужской");
-        //     fw.flush();
-        // } catch (IOException e) {
-        //     System.out.println(e.getMessage());
-        // }
+        try {
+            FileWriter fw = new FileWriter("sem_03_db.sql");
+            fw.append("Петров А.А." + " 56 лет " + " Мужской");
+            fw.append("Иванов Б.Б." + " 56 лет " + " Мужской");
+            fw.append("Сидоров В.В." + " 56 лет " + " Мужской");
+            fw.append(" В.В." + " 56 лет " + " Мужской");
+            fw.append("Сидоров В.В." + " 56 лет " + " Мужской");
+            fw.flush();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
 
         // FileWriter fr = null;
         
@@ -154,64 +154,64 @@ public class Program {
 // --------------------------------------------------------------------------------------------------
 // Нужно редактировать, код не доделан.
 
-        FileReader reader = new FileReader("sem_03.txt");
+    //     FileReader reader = new FileReader("sem_03.txt");
 
-        String fileText = "";
-        while (reader.ready()) {
-            fileText += (char) reader.read();
-        }
+    //     String fileText = "";
+    //     while (reader.ready()) {
+    //         fileText += (char) reader.read();
+    //     }
 
-        List<String> stringList = List.of(fileText.split("\n"));
+    //     List<String> stringList = List.of(fileText.split("\n"));
 
-        String[] tempString;
+    //     String[] tempString;
 
-        LinkedList <String> surname = new LinkedList<>();
-        LinkedList<String> name = new LinkedList<>();
-        LinkedList<String> secName = new LinkedList<>();
-        LinkedList<Integer> age = new LinkedList<>();
-        LinkedList<Boolean> sex = new LinkedList<>();
-        LinkedList<Integer> id = new LinkedList<>();
+    //     LinkedList <String> surname = new LinkedList<>();
+    //     LinkedList<String> name = new LinkedList<>();
+    //     LinkedList<String> secName = new LinkedList<>();
+    //     LinkedList<Integer> age = new LinkedList<>();
+    //     LinkedList<Boolean> sex = new LinkedList<>();
+    //     LinkedList<Integer> id = new LinkedList<>();
 
-        for (int i = 0; i < stringList.size(); i++) {
-            tempString = stringList.get(i).split(" ");
-            surname.add(tempString[0]);
-            name.add(tempString[1]);
-            secName.add(tempString[2]);
-            int ageInt = Integer.parseInt(tempString[3]);
-            age.add(ageInt);
-            sex.add(toBoolean(tempString[4]));
-            id.add(i);
-        }
+    //     for (int i = 0; i < stringList.size(); i++) {
+    //         tempString = stringList.get(i).split(" ");
+    //         surname.add(tempString[0]);
+    //         name.add(tempString[1]);
+    //         secName.add(tempString[2]);
+    //         int ageInt = Integer.parseInt(tempString[3]);
+    //         age.add(ageInt);
+    //         sex.add(toBoolean(tempString[4]));
+    //         id.add(i);
+    //     }
 
-        sortId(age, id);
+    //     sortId(age, id);
 
 
-        System.out.println(surname);
-        System.out.println(name);
-        System.out.println(secName);
-        System.out.println(age);
-        System.out.println(sex);
-        System.out.println(id);
-        }
+    //     System.out.println(surname);
+    //     System.out.println(name);
+    //     System.out.println(secName);
+    //     System.out.println(age);
+    //     System.out.println(sex);
+    //     System.out.println(id);
+    //     }
 
-    public static boolean toBoolean(String sexFrom) {
-        if (sexFrom.equals("муж")) return true;
-        else return false;
-    }
+    // public static boolean toBoolean(String sexFrom) {
+    //     if (sexFrom.equals("муж")) return true;
+    //     else return false;
+    // }
 
-    public static void sortId(LinkedList<Integer> ages, LinkedList<Integer> ids) {
-        int temp;
-        int temp2;
-        int count = 0;
-        for (int i = 0; i < ages.size() - count; i++) {
-            if (ages.get(i) > ages.get(i+1)) {
-                temp = ages.get(i + 1);
-                temp2 = ids.get(i + 1);
-                ages.set(i + 1, temp);
-                ids.set(i + 1, temp2);
-                count++;
-            }
-        }
+    // public static void sortId(LinkedList<Integer> ages, LinkedList<Integer> ids) {
+    //     int temp;
+    //     int temp2;
+    //     int count = 0;
+    //     for (int i = 0; i < ages.size() - count; i++) {
+    //         if (ages.get(i) > ages.get(i+1)) {
+    //             temp = ages.get(i + 1);
+    //             temp2 = ids.get(i + 1);
+    //             ages.set(i + 1, temp);
+    //             ids.set(i + 1, temp2);
+    //             count++;
+    //         }
+    //     }
 
     }
 }

@@ -103,10 +103,4 @@
  * Пример: Ex006_HashTable.java
  */
 
-package lessons.java_projects_05;
-
-public class Program {
-    public static void main(String[] args) {
-        
-    }
-}
+// Переопределил equals – переопредели hashCode

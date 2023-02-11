@@ -13,6 +13,6 @@ public class Ex002_HashMapEntry {
         for (var item : db.entrySet()) {
             System.out.printf("[%d: %s]\n", item.getKey(), item.getValue());
         }
-        // .entrySet() - Позваляет получить итератор, при помощи, которого можно пробужаться по элементам.
+        // .entrySet() - Позваляет получить итератор, при помощи, которого можно пробежаться по элементам.
     }
 }

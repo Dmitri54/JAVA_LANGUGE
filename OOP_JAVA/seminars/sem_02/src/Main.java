@@ -50,6 +50,7 @@
 
 package OOP_JAVA.seminars.sem_02.src;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Main implements GameInterface{ 
@@ -70,6 +71,10 @@ public class Main implements GameInterface{
         
         System.out.println(man.getInfo());
         System.out.println(man1.getInfo());
+
+        ArrayList<Human> list = new ArrayList<>();
+        list.add(new XBowMan(getName()));
+        list.get(0).step();
 
         // Human.getHumanCnt(); 
 // вызываю метод прям из класса (Human.), не создавая экземпляр класса, т.к. поле static getHumanCnt().

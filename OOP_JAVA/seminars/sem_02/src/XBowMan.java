@@ -25,6 +25,9 @@ public class XBowMan extends Archer {
     @Override
     public String getInfo(){
         return "Я Арбалетчик!";
-    }   
+    } 
+      
+    @Override
+    public void step(){}
 
 }

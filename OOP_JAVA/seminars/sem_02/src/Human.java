@@ -32,6 +32,12 @@ public abstract class Human implements GameInterface { // Пример абст�
         humanCnt++; // Я не могу его менять, но могу написать геттер.
     }
 
+    @Override
+    public void step(int a){}
+
+    @Override
+    public String getInfo() {return "Я человек! ";}
+
     public int getDef(){ // метод класса.
         return def;
     }

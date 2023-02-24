@@ -33,7 +33,7 @@ public abstract class Human implements GameInterface { // Пример абст�
     }
 
     @Override
-    public void step(int a){}
+    public void step(){}
 
     @Override
     public String getInfo() {return "Я человек! ";}

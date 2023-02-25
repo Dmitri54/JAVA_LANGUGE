@@ -10,8 +10,7 @@ public abstract class Unit implements GameInterface {
     int levl; // Уровень
     protected int power; // Энергия
     protected  boolean step; // Ходьба
-    int speed;
-    int maxHp, def, damegeMin, damegeMax;
+    int speed, maxHp, def, damegeMin, damegeMax, x, y;
 
     public Unit(String name ){
         this.name = name;
@@ -21,7 +20,7 @@ public abstract class Unit implements GameInterface {
         this.step = false;
     }
 
-    public Unit(String name, int hp, int levl, int power, boolean step, int speed, int maxHp, int def, int damegeMin, int damegeMax) {
+    public Unit(String name, int hp, int levl, int power, boolean step, int speed, int maxHp, int def, int damegeMin, int damegeMax, int x, int y) {
         this.name = name;
         this.hp = hp;
         this.levl = levl;
@@ -32,6 +31,8 @@ public abstract class Unit implements GameInterface {
         this.def = def;
         this.damegeMin = damegeMin;
         this.damegeMax = damegeMax;
+        this.x = x;
+        this.y = y;
     }
 
     public static String setName(){
@@ -51,6 +52,18 @@ public abstract class Unit implements GameInterface {
             case Robber -> arrayList.add(new Robber(setName()));
             case Spearman -> arrayList.add(new Sniper(setName()));
             case Crossbowman -> arrayList.add(new Robber(setName()));
+        } 
+    }
+
+    public static void createArreyUnit2(ArrayList <Unit> arrayList, ClassesUnits classesUnits){
+        switch (classesUnits){
+            case Sniper -> arrayList.add(new Spearman(setName()));
+            case Mag -> arrayList.add(new Monk(setName()));
+            case Monk -> arrayList.add(new Monk(setName()));
+            case Fermer -> arrayList.add(new Fermer(setName()));
+            case Robber -> arrayList.add(new Robber(setName()));
+            case Spearman -> arrayList.add(new Spearman(setName()));
+            case Crossbowman -> arrayList.add(new Crossbowman(setName()));
         }
     }
 

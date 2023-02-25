@@ -6,13 +6,13 @@ public class Monk extends Unit{ // Монах
     int combatSkill; // Боевой навык
 
     public Monk(String name) {
-        super(name, 100, 1, 100, false, 20, 100, 10, 10, 20);
+        super(name, 100, 1, 100, false, 20, 100, 10, 10, 20, 0, 0);
         this.motivation = 10;
         this.combatSkill = 10;
     }
 
-    public Monk(String name, int hp, int levl, int power, boolean step, int speed, int maxHp, int def, int damegeMin, int damegeMax, int motivation, int combatSkill) {
-        super(name, hp, levl, power, step, speed, maxHp, def, damegeMin, damegeMax);
+    public Monk(String name, int hp, int levl, int power, boolean step, int speed, int maxHp, int def, int damegeMin, int damegeMax, int x, int y, int motivation, int combatSkill) {
+        super(name, hp, levl, power, step, speed, maxHp, def, damegeMin, damegeMax, x, y);
         this.motivation = motivation;
         this.combatSkill = combatSkill;
     }

@@ -5,7 +5,17 @@ public class Fermer extends Unit{ // Крестьянин
     int cartriges; // Боеприпасы
 
     public Fermer(String name){
-        super(name, 80, 1, 50, false, 12, 80, 5, 10, 30, 0, 0);
+        super(name, 
+        80, 
+        1, 
+        50, 
+        false, 
+        12, 
+        80, 
+        5, 
+        10, 
+        30, 
+        0, 0);
         this.food = 20;
         this.cartriges = 50;
     }

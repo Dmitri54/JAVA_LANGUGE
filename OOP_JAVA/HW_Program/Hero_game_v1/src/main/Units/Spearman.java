@@ -5,7 +5,17 @@ public class Spearman extends Unit{ // Копейщик
     protected boolean keepInLine; // Держать строй
 
     public Spearman(String name){
-        super(name, 80, 1, 50, false, 12, 80, 5, 10, 30, 0, 0);
+        super(name, 
+        80, 
+        1, 
+        50, 
+        false, 
+        12, 
+        80, 
+        5, 
+        10, 
+        30, 
+        0, 0);
         this.keepInLine = false;
     }
 

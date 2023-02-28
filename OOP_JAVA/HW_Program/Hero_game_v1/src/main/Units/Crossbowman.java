@@ -6,7 +6,19 @@ public class Crossbowman extends Arrow { // Арбалетчик
     protected boolean keepInLine; // Держать строй
 
     public Crossbowman(String name) {
-        super(name, 100, 1, 100, false, 10, 100, 10, 5, 20, 10, 5, 0, 0);
+        super(name, 
+        100, 
+        1, 
+        100, 
+        false, 
+        10, 
+        100, 
+        10, 
+        5, 
+        20, 
+        1, 
+        1, 
+        10, 5);
         this.concentration = 0;
         this.keepInLine = false;
     }

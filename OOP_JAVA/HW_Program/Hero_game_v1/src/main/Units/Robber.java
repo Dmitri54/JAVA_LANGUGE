@@ -10,7 +10,17 @@ public class Robber extends Unit { // Разбойник
     }
 
     public Robber(String name){
-        super(name, 50, 1, 20, false, 30, 50, 2, 2, 10, 5, 5);
+        super(name, 
+        50,
+        1, 
+        20, 
+        false, 
+        30, 
+        50, 
+        2, 
+        2, 
+        10, 
+        5, 5);
         this.hide = false;
     }
 

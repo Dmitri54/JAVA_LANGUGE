@@ -6,7 +6,17 @@ public class Mag extends Unit{ // Колдун
         protected boolean magiсBook; // Магическая книга
     
         public Mag(String name) {
-            super(name, 80, 1, 50, false, 12, 80, 5, 10, 30, 0, 0);
+            super(name, 
+            80, 
+            1, 
+            50, 
+            false, 
+            12, 
+            80, 
+            5, 
+            10, 
+            30, 
+            0, 0);
             this.mana = mana;
             this.magiсBook = magiсBook;
         }

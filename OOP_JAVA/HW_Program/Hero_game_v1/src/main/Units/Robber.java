@@ -1,51 +1,30 @@
 package OOP_JAVA.HW_Program.Hero_game_v1.src.main.Units;
 
-public class Robber extends Unit { // Разбойник
+public class Robber extends Warrior {
+    int disguise;
 
-    protected boolean hide; // Спрятаться
-
-    public Robber(String name, int hp, int levl, int power, boolean step, int speed, int maxHp, int def, int damegeMin, int damegeMax, int x, int y, boolean hide) {
-        super(name, hp, levl, power, step, speed, maxHp, def, damegeMin, damegeMax, x, y);
-        this.hide = hide;
+    public Robber(String name, float hp, int maxHp, int attack, int damageMin, int damageMax, int defense, int speed, int disguise, int posX, int posY) {
+        super(name, hp, maxHp, attack, damageMin, damageMax, defense, speed, posX, posY);
+        this.disguise = disguise;
     }
 
-    public Robber(String name){
-        super(name, 
-        50,
-        1, 
-        20, 
-        false, 
-        30, 
-        50, 
-        2, 
-        2, 
-        10, 
-        5, 5);
-        this.hide = false;
+    public Robber(String name, Vector2D coords) {
+        super(name, 70.f, 70, 10, 2, 6, 7,
+                6, coords.posX, coords.posY);
+        this.disguise = 50;
     }
 
-
-    @Override
-    public void step() {
-        super.step();
+    public void steal(int disguise, Shooter Shooter) {
     }
 
     @Override
-    public String getInfo() {
-        return "Я, разбойник! ";
-    }
-
-    /**
-     * Спрятаться
-     */
-    public void setHide(){
-
-    }
-    /**
-     * Украсть
-     */
-
-    public void steal(){
-
+    public StringBuilder getInfo() {
+        StringBuilder builder = new StringBuilder();
+        return builder.append("Бандит: \t").append(Robber.super.name)
+                .append("\t| ATK:\t").append(Robber.super.attack)
+                .append("\t| HP:\t").append(Robber.super.hp)
+                .append(" \t|\t\t\t|").append("\t| (X.Y) : ")
+                .append(Robber.super.coords.posX)
+                .append(".").append(Robber.super.coords.posY);
     }
 }

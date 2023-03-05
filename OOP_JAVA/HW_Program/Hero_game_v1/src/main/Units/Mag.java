@@ -1,37 +1,17 @@
 package OOP_JAVA.HW_Program.Hero_game_v1.src.main.Units;
 
-public class Mag extends Unit{ // Колдун
-        
-        protected int mana; // Мана.
-        protected boolean magiсBook; // Магическая книга
-    
-        public Mag(String name) {
-            super(name, 
-            80, 
-            1, 
-            50, 
-            false, 
-            12, 
-            80, 
-            5, 
-            10, 
-            30, 
-            0, 0);
-            this.mana = mana;
-            this.magiсBook = magiсBook;
-        }
-    
-        @Override
-        public void step() {
-            super.step();
-        }
-    
-        @Override
-        public String getInfo() {
-            return "Я, маг! ";
-        }
-    
-        public void custSpell(){
-            System.out.println("Кастует заклинание"); // Заклинание
-        }
+// import OOP_JAVA.HW_Program.Hero_game_v1.src.main.Units.Human;
+
+public abstract class Mag extends Human {
+    protected int mana;
+    protected int maxMana;
+    public Mag(String name, float hp, int maxHp, int attack, int damageMin, int damageMax, int defense,
+               int speed, int mana, int maxMana, int posX, int posY) {
+        super(name, hp, maxHp, attack, damageMin, damageMax, defense, speed, posX, posY);
+        this.mana = mana;
+        this.maxMana = maxMana;
+    }
+
+//    public int healing (int damage, Human human){ return hp;}
+
 }

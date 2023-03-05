@@ -1,49 +1,22 @@
 package OOP_JAVA.HW_Program.Hero_game_v1.src.main.Units;
 
-public class Sniper extends Arrow { // Снайпер
 
-    int concentration; // Концентрация
-    int disguise; // Маскировка
+public class Sniper extends Shooter{
 
-    public Sniper(String name){
-        super(name, 
-        80, 
-        1, 
-        60, 
-        false, 
-        40, 
-        80, 
-        5, 
-        50, 
-        80, 
-        10, 
-        50, 
-        2, 2);
-        this.disguise = 50;
-        this.concentration = 10;
-    }
-
-    public Sniper(String name, int hp, int levl, int power, boolean step, int speed, int maxHp, int def, int damegeMin, int damegeMax, int x, int y, int cartriges, int distance, int disguise, int concentration) {
-        super(name, hp, levl, power, step, speed, maxHp, def, damegeMin, damegeMax, x, y, cartriges, distance);
-        this.disguise = disguise;
-        this.concentration = concentration;
+    public Sniper(String name, Vector2D coords) {
+        super(name, 60.f, 60, 10, 3, 5, 3,
+                9, 22, 10, coords.posX, coords.posY);
     }
 
     @Override
-    public void step() {
-        super.step();
-    }
-
-    @Override
-    public String getInfo() {
-        return "Я, снайпер! ";
-    }
-
-    public void setDisguise(){ // Маскировка
-
-    }
-
-    public void shot(){ // Выстел
-
+    public StringBuilder getInfo() {
+        StringBuilder builder = new StringBuilder();
+        return builder.append("Снайпер:\t").append(Sniper.super.name)
+                .append("\t| ATK:\t").append(Sniper.super.attack)
+                .append("\t| HP:\t").append(Sniper.super.hp)
+                .append(" \t| Arrows:").append(Sniper.super.cartridges)
+                .append("\t|").append("\t| (X.Y) : ")
+                .append(Sniper.super.coords.posX).append(".")
+                .append(Sniper.super.coords.posY);
     }
 }

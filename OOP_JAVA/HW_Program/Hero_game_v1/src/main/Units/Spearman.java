@@ -1,45 +1,24 @@
 package OOP_JAVA.HW_Program.Hero_game_v1.src.main.Units;
 
-public class Spearman extends Unit{ // Копейщик
-
-    protected boolean keepInLine; // Держать строй
-
-    public Spearman(String name){
-        super(name, 
-        80, 
-        1, 
-        50, 
-        false, 
-        12, 
-        80, 
-        5, 
-        10, 
-        30, 
-        0, 0);
-        this.keepInLine = false;
+public class Spearman extends Warrior {
+    public Spearman(String name, float hp, int maxHp, int attack, int damageMin, int damageMax, int defense, int speed, int posX, int posY) {
+        super(name, hp, maxHp, attack, damageMin, damageMax, defense, speed, posX, posY);
     }
 
-    public Spearman(String name, int hp, int levl, int power, boolean step, int speed, int maxHp, int def, int damegeMin, int damegeMax, int x, int y, boolean keepInLine) {
-        super(name, hp, levl, power, step, speed, maxHp, def, damegeMin, damegeMax, x, y);
-        this.keepInLine = keepInLine;
+    public Spearman(String name, Vector2D coords) {
+
+        super(name, 70.f, 70, 10, 2, 4, 10,
+                6, coords.posX, coords.posY);
     }
+
+    public void runAway() {    }
 
     @Override
-    public void step() {
-        super.step();
+    public StringBuilder getInfo() {
+        StringBuilder builder = new StringBuilder();
+        return builder.append("Копейщик:\t").append(Spearman.super.name)
+                .append("\t| ATK:\t").append(Spearman.super.attack)
+                .append("\t| HP:\t").append(Spearman.super.hp)
+                .append(" \t|\t\t\t|").append("\t| (X.Y) : ").append(Spearman.super.coords.posX).append(".").append(Spearman.super.coords.posY);
     }
-
-    @Override
-    public String getInfo() {
-        return "Я, копейщик! ";
-    }
-
-    public void needHelp(){ // Нужна помощь
-
-    }
-
-    public void capture(){ // Захват территории
-
-    }
-
 }

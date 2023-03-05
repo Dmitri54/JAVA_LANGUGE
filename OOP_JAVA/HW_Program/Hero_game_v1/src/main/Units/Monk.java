@@ -1,47 +1,23 @@
 package OOP_JAVA.HW_Program.Hero_game_v1.src.main.Units;
 
-public class Monk extends Unit{ // Монах
+public class Monk extends Mag{
+    public Monk(String name, float hp, int maxHp, int attack, int damageMin, int damageMax,
+                int defense, int speed, int mana, int maxMana, int posX, int posY) {
+        super(name, hp, maxHp, attack, damageMin, damageMax, defense, speed, mana, maxMana, posX, posY);
 
-    int motivation; // Мотивация
-    int combatSkill; // Боевой навык
-
-    public Monk(String name) {
-        super(name, 
-        100, 
-        1, 
-        100, 
-        false, 
-        20, 
-        100, 
-        10, 
-        10, 
-        20, 
-        1, 5);
-        this.motivation = 10; 
-        this.combatSkill = 10;
     }
+    public Monk(String name, Vector2D coords) {
+        super(name, 50.f, 50, 10, -7, -7, 3,
+                7, 5 ,5, coords.posX, coords.posY);
 
-    public Monk(String name, int hp, int levl, int power, boolean step, int speed, int maxHp, int def, int damegeMin, int damegeMax, int x, int y, int motivation, int combatSkill) {
-        super(name, hp, levl, power, step, speed, maxHp, def, damegeMin, damegeMax, x, y);
-        this.motivation = motivation;
-        this.combatSkill = combatSkill;
     }
-
     @Override
-    public void step() {
-        super.step();
-    }
-
-    @Override
-    public String getInfo() {
-        return "Я, монах! ";
-    }
-
-    public void hit(){ // Удар
-
-    }
-    
-    public void getMotivation(){ // Дать мотивацию
-
+    public StringBuilder getInfo() {
+        StringBuilder builder = new StringBuilder();
+        return builder.append("Монах:  \t").append(Monk.super.name)
+                .append("\t| ATK:\t").append(Monk.super.attack)
+                .append("\t| HP:\t").append(Monk.super.hp)
+                .append(" \t| MP:\t").append(Monk.super.mana)
+                .append("\t|").append("\t| (X.Y) : ").append(Monk.super.coords.posX).append(".").append(Monk.super.coords.posY);
     }
 }

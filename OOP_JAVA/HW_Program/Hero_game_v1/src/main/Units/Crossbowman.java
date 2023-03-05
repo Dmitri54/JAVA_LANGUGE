@@ -1,47 +1,26 @@
 package OOP_JAVA.HW_Program.Hero_game_v1.src.main.Units;
 
-public class Crossbowman extends Arrow { // Арбалетчик
- 
-    protected int concentration; // Концентрация
-    protected boolean keepInLine; // Держать строй
+import java.util.ArrayList;
 
-    public Crossbowman(String name) {
-        super(name, 
-        100, 
-        1, 
-        100, 
-        false, 
-        10, 
-        100, 
-        10, 
-        5, 
-        20, 
-        1, 
-        1, 
-        10, 5);
-        this.concentration = 0;
-        this.keepInLine = false;
+public class Crossbowman extends Shooter {
+
+    protected Crossbowman(String name, float hp, int maxHp, int attack, int damageMin, int damageMax, int defense,
+                       int speed, int cartridges, int range, int posX, int posY) {
+        super(name, hp, maxHp, attack, damageMin, damageMax, defense, speed, cartridges, range, posX, posY);
     }
 
-    public Crossbowman(String name, int hp, int levl, int power, boolean step, int speed, int maxHp, int def, int damegeMin, int damegeMax, int x, int y, int cartriges, int distance, int concentration, boolean keepInLine) {
-        super(name, hp, levl, power, step, speed, maxHp, def, damegeMin, damegeMax, x, y, cartriges, distance);
-        this.concentration = concentration;
-        this.keepInLine = keepInLine;
+    public Crossbowman(String name, Vector2D coords) {
+        super(name, 60.f, 60, 7, 3, 7, 4,
+                9, 20, 10, coords.posX, coords.posY);
     }
 
     @Override
-    public void step() {super.step(); }
-
-    @Override
-    public String getInfo() {
-        return "Я, арбалетчик! ";
-    }
-
-    public void shoot(){ // Выстрел
-
-    }
-
-    public void  needHelp(){ // Нужна помощь
-
+    public StringBuilder getInfo() {
+        StringBuilder builder = new StringBuilder();
+        return builder.append("Арбалет: \t").append(Crossbowman.super.name)
+                .append("\t| ATK:\t").append(Crossbowman.super.attack)
+                .append("\t| HP:\t").append(Crossbowman.super.hp)
+                .append(" \t| Arrows:").append(Crossbowman.super.cartridges)
+                .append("\t|").append("\t| (X.Y) : ").append(Crossbowman.super.coords.posX).append(".").append(Crossbowman.super.coords.posY);
     }
 }

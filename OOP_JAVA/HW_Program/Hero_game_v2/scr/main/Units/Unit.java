@@ -9,11 +9,13 @@ public abstract class Unit implements GameInterface {
     protected int hp;
     protected int speed, attack;
     protected int maxHp, def, damageMin, damageMax;
-    protected String state;
-    protected Vector2D pos;
-    protected int heroCnt; // Счетчик героев 
 
-    protected Unit(String name, int speed, int maxHp, int def, int damegeMin, int damegeMax, int x, int y, int attack) {
+    protected String state;
+
+
+    protected Vector2D pos;
+
+    public Unit(String name, int speed, int maxHp, int def, int damegeMin, int damegeMax, int x, int y, int attack) {
         this.name = name;
         this.speed = speed;
         this.maxHp = maxHp;

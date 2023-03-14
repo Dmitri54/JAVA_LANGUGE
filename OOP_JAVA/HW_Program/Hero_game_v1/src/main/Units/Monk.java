@@ -1,16 +1,20 @@
 package OOP_JAVA.HW_Program.Hero_game_v1.src.main.Units;
 
-public class Monk extends Mag{
-    public Monk(String name, float hp, int maxHp, int attack, int damageMin, int damageMax,
-                int defense, int speed, int mana, int maxMana, int posX, int posY) {
-        super(name, hp, maxHp, attack, damageMin, damageMax, defense, speed, mana, maxMana, posX, posY);
+import java.util.ArrayList;
 
-    }
+public class Monk extends Mag{
+    
     public Monk(String name, Vector2D coords) {
         super(name, 50.f, 50, 10, -7, -7, 3,
                 7, 5 ,5, coords.posX, coords.posY);
 
     }
+
+    @Override
+    public void step(ArrayList<Human> team1, ArrayList<Human> team2) {
+        super.step(team1, team2); // Так будет выполняться step описанный в классе Mag.
+    }
+
     @Override
     public StringBuilder getInfo() {
         StringBuilder builder = new StringBuilder();

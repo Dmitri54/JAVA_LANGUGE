@@ -19,4 +19,5 @@ public class Sniper extends Shooter{
                 .append(Sniper.super.coords.posX).append(".")
                 .append(Sniper.super.coords.posY);
     }
+
 }

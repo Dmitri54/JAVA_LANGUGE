@@ -1,9 +1,6 @@
 package OOP_JAVA.HW_Program.Hero_game_v1.src.main.Units;
 
 public class Spearman extends Warrior {
-    public Spearman(String name, float hp, int maxHp, int attack, int damageMin, int damageMax, int defense, int speed, int posX, int posY) {
-        super(name, hp, maxHp, attack, damageMin, damageMax, defense, speed, posX, posY);
-    }
 
     public Spearman(String name, Vector2D coords) {
 

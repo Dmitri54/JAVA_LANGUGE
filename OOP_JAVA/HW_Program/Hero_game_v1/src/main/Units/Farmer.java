@@ -1,5 +1,7 @@
 package OOP_JAVA.HW_Program.Hero_game_v1.src.main.Units;
 
+import java.util.ArrayList;
+
 public class Farmer extends Human {
     protected int cartridges;
     protected Farmer(String name, float hp, int maxHp, int attack, int damageMin, int damageMax, int defense,
@@ -13,14 +15,12 @@ public class Farmer extends Human {
         this.cartridges = 1;
     }
 
-    protected void armiger(Shooter Shooter){  }
+    @Override
+    public void step (ArrayList<Human> team1, ArrayList<Human> team2) {
+        if (state.equals("Die")) state = "Stand";
+    }
 
-    public int getCartridgesFarmer () {
-        return this.cartridges;
-    }
-    public void setCartridgesFarmer (int cartridges) {
-        this.cartridges = cartridges;
-    }
+    
     @Override
     public StringBuilder getInfo() {
         StringBuilder builder = new StringBuilder();

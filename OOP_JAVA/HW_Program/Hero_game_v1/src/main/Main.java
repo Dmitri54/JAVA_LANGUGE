@@ -20,12 +20,16 @@ import java.util.Scanner;
 public class Main {
     static final int UNITS = 10;
 
+    public static ArrayList<Human> holyTeam = new ArrayList<>(); 
+    public static ArrayList<Human> darkTeam = new ArrayList<>();
+    public static ArrayList<Human> allTeam = new ArrayList<>();
+// Перенес ArrayList из метода main, чтобы они были видны во View
+
     public static void main(String[] args) {
 
-        ArrayList<Human> holyTeam = new ArrayList<>();
-        ArrayList<Human> darkTeam = new ArrayList<>();
-        ArrayList<Human> allTeam = new ArrayList<>();
-        Scanner user_input = new Scanner(System.in); 
+        Scanner user_input = new Scanner(System.in);
+        System.out.println("Press Enter to bigen.");
+        user_input.nextLine(); 
         
         createTeam(holyTeam, 0, 1);
         createTeam(darkTeam, 3, 10);
@@ -33,41 +37,41 @@ public class Main {
         allTeam.addAll(darkTeam);
         sortTeam(allTeam);
 
-        for (Human human: allTeam) {
-            if (holyTeam.contains(human)) human.step(holyTeam, darkTeam);
-            else human.step(darkTeam, holyTeam);
-        }
-
         while (true){
+            View.view();
             user_input.nextLine();
+            for (Human human: allTeam) {
+                if (holyTeam.contains(human)) human.step(holyTeam, darkTeam);
+                else human.step(darkTeam, holyTeam);
+            }
 
         }
 
     }
-    static void createTeam (ArrayList team, int offset, int posY) {
-        for (int i = 0; i <= UNITS; i++) {
+    static void createTeam (ArrayList<Human> team, int offset, int posY) {
+        for (int i = 0; i < UNITS; i++) {
             int rnd = new Random().nextInt(4)+offset;
             switch (rnd) {
                 case (0):
-                    team.add(new Sniper(getName(), new Vector2D(i, posY)));
+                    team.add(new Sniper(getName(), new Vector2D(i + 1, posY)));
                     break;
                 case (1):
-                    team.add(new Robber(getName(), new Vector2D(i, posY)));
+                    team.add(new Robber(getName(), new Vector2D(i + 1, posY)));
                     break;
                 case (2):
-                    team.add(new Witch(getName(), new Vector2D(i, posY)));
+                    team.add(new Witch(getName(), new Vector2D(i + 1, posY)));
                     break;
                 case (3):
-                    team.add(new Farmer(getName(), new Vector2D(i, posY)));
+                    team.add(new Farmer(getName(), new Vector2D(i + 1, posY)));
                     break;
                 case (4):
-                    team.add(new Crossbowman(getName(), new Vector2D(i, posY)));
+                    team.add(new Crossbowman(getName(), new Vector2D(i + 1, posY)));
                     break;
                 case (5):
-                    team.add(new Monk(getName(), new Vector2D(i, posY)));
+                    team.add(new Monk(getName(), new Vector2D(i + 1, posY)));
                     break;
                 case (6):
-                    team.add(new Spearman(getName(), new Vector2D(i, posY)));
+                    team.add(new Spearman(getName(), new Vector2D(i + 1, posY)));
                     break;
             }
         }

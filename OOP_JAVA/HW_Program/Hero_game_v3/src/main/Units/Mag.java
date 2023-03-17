@@ -1,37 +1,21 @@
 package OOP_JAVA.HW_Program.Hero_game_v3.src.main.Units;
 
-public class Mag extends Unit{ // Колдун
-        
-    protected int mana; // Мана.
-    protected boolean magiсBook; // Магическая книга
+import java.util.ArrayList;
 
-    public Mag(String name) {
-        super(name, 
-        80, 
-        1, 
-        50, 
-        false, 
-        12, 
-        80, 
-        5, 
-        10, 
-        30, 
-        0, 0);
-        this.mana = mana;
-        this.magiсBook = magiсBook;
+public class Mag extends Magic{ // Колдун, Волшебник
+
+    public Mag(String name, Vector2D pos) {
+        super(name, 30, 30, 17, -5, -5, 12, 9, 5, 5, pos.x, pos.y);
     }
 
     @Override
-    public void step() {
-        super.step();
+    public void step(ArrayList<Unit> team1, ArrayList<Unit> team2) {
+        super.step(team1, team2);
     }
 
     @Override
     public String getInfo() {
-        return "Я, маг! ";
+        return "Волшебник ";
     }
 
-    public void custSpell(){
-        System.out.println("Кастует заклинание"); // Заклинание
-    }
 }

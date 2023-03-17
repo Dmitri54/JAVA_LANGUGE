@@ -1,9 +1,10 @@
 package OOP_JAVA.HW_Program.Hero_game_v3.src.main.Units;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public abstract class Unit implements GameInterface {
-    protected String name, clas;
+    protected String name;
     protected float hp;
     protected int maxHp;
     protected int attack;
@@ -17,7 +18,6 @@ public abstract class Unit implements GameInterface {
 
     protected Unit(String name, float hp, int maxHp, int attack, int damageMin,
                  int damageMax, int defense, int speed, int x, int y) {
-        this.clas = clas;
         this.name = name;
         this.hp = hp;
         this.maxHp = maxHp;
@@ -30,7 +30,22 @@ public abstract class Unit implements GameInterface {
         state = "Stand";
     }
 
+    public static String getName() { // Дать случайное имя
+        return String.valueOf(Names.values()[new Random().nextInt(Names.values().length - 1)]);
+    }
+
+    @Override
+    public String toString() {
+        return name +
+                " H:" + Math.round(hp) + 
+                " D:" + defense + 
+                " A:" + attack +
+                " Dmg:" + Math.round(Math.abs((damageMin + damageMax)/ 2)) + " " +
+                state;
+    }
+
     public int getSpeed() { return this.speed; }
+
     public float getHp () { return this.hp; }
 
     @Override
@@ -57,9 +72,16 @@ public abstract class Unit implements GameInterface {
     }
     
 
-    public String getInfo(){return "Я человек!";}
+    @Override
+    public String getInfo() {
+        return "Я человек!" + "HP: " + this.hp;
+    }
 
-    public String getPrint(){
-        return String.format("%10s HP:%3d State: %5s %7s", clas, hp, state, "");
+    public int[] getPos() {
+        return new int[]{pos.x, pos.y};
+    }
+
+    public String getState() {
+        return state;
     }
 }

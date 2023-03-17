@@ -15,7 +15,7 @@ public class Farmer extends Unit {
     }
 
     @Override
-    public void step(ArrayList<Unit> team1, ArrayList<Unit> team2) {
+    public void step(ArrayList<Unit> team1, ArrayList<Unit> team2) { // Д/з урок 5
         if (state.equals("Die")) {hp = 0; return;}
         if (!state.equals("Die")) state = "Stand";
         System.out.println("Фермер " + name + " освободился");

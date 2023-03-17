@@ -1,51 +1,15 @@
 package OOP_JAVA.HW_Program.Hero_game_v3.src.main.Units;
 
-public class Robber extends Unit { // Разбойник
-
-    protected boolean hide; // Спрятаться
-
-    public Robber(String name, int hp, int levl, int power, boolean step, int speed, int maxHp, int def, int damegeMin, int damegeMax, int x, int y, boolean hide) {
-        super(name, hp, levl, power, step, speed, maxHp, def, damegeMin, damegeMax, x, y);
-        this.hide = hide;
-    }
-
-    public Robber(String name){
-        super(name, 
-        50,
-        1, 
-        20, 
-        false, 
-        30, 
-        50, 
-        2, 
-        2, 
-        10, 
-        5, 5);
-        this.hide = false;
-    }
+public class Robber extends Warrior { // Разбойник
 
 
-    @Override
-    public void step() {
-        super.step();
+    public Robber(String name, Vector2D pos){
+        super(name, 10, 10, 8, 2, 4, 3, 6, pos.x, pos.y);
     }
 
     @Override
     public String getInfo() {
-        return "Я, разбойник! ";
+        return "Разбойник ";
     }
 
-    /**
-     * Спрятаться
-     */
-    public void setHide(){
-
-    }
-    /**
-     * Украсть
-     */
-
-    public void steal(){
-
-    }
 }

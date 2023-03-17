@@ -1,47 +1,14 @@
 package OOP_JAVA.HW_Program.Hero_game_v3.src.main.Units;
 
-public class Monk extends Unit{ // Монах
+public class Monk extends Magic{ // Монах
 
-    int motivation; // Мотивация
-    int combatSkill; // Боевой навык
-
-    public Monk(String name) {
-        super(name, 
-        100, 
-        1, 
-        100, 
-        false, 
-        20, 
-        100, 
-        10, 
-        10, 
-        20, 
-        1, 5);
-        this.motivation = 10; 
-        this.combatSkill = 10;
-    }
-
-    public Monk(String name, int hp, int levl, int power, boolean step, int speed, int maxHp, int def, int damegeMin, int damegeMax, int x, int y, int motivation, int combatSkill) {
-        super(name, hp, levl, power, step, speed, maxHp, def, damegeMin, damegeMax, x, y);
-        this.motivation = motivation;
-        this.combatSkill = combatSkill;
-    }
-
-    @Override
-    public void step() {
-        super.step();
+    public Monk(String name, Vector2D pos) {
+        super(name, 30, 30, 12, -4, -4, 7, 5, 5, 5, pos.x, pos.y);
     }
 
     @Override
     public String getInfo() {
-        return "Я, монах! ";
+        return "Монах ";
     }
 
-    public void hit(){ // Удар
-
-    }
-    
-    public void getMotivation(){ // Дать мотивацию
-
-    }
 }

@@ -10,7 +10,7 @@ public class Spearman extends Warrior{ // Копейщик
 
     @Override
     public String getInfo() {
-        return "Копейщик ";
+        return "Копейщик";
     }
 
 

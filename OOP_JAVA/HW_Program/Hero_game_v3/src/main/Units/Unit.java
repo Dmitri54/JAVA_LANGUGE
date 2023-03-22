@@ -14,7 +14,7 @@ public abstract class Unit implements GameInterface {
     protected int speed;
 
     protected Vector2D pos;
-    public String state; // Текущее состояние
+    protected String state; // Текущее состояние
 
     protected Unit(String name, float hp, int maxHp, int attack, int damageMin,
                  int damageMax, int defense, int speed, int x, int y) {
@@ -36,7 +36,7 @@ public abstract class Unit implements GameInterface {
 
     @Override
     public String toString() {
-        return name +
+        return "👷" +
                 " H:" + Math.round(hp) + 
                 " D:" + defense + 
                 " A:" + attack +
@@ -62,15 +62,15 @@ public abstract class Unit implements GameInterface {
         }
         return index;
     }
-    protected void getDamage(float damage){ // Получить повреждения
-        this.hp -= damage;
-        if (hp <= 0) {
-            hp = 0;
-            state = "Die";
-        }
+    protected void getDamage(float damage){
+        hp -= damage;
         if (hp > maxHp) hp = maxHp;
+        if (hp < 0){
+            System.out.println(getInfo() + " " + name + " умер");
+            state = "Die";
+            hp = 0;
+        }
     }
-    
 
     @Override
     public String getInfo() {

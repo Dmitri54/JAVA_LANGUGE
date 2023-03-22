@@ -3,8 +3,6 @@ package OOP_JAVA.HW_Program.Hero_game_v3.src.main;
 import OOP_JAVA.HW_Program.Hero_game_v3.src.main.Units.Unit;
 import java.util.Collections;
 
-
-
 public class View {
     private static int step = 1;
     private static final int[] l = {0};
@@ -41,15 +39,15 @@ public class View {
     }
 
     private static String getChar(int y, int x){
-        String out = "| " + AnsiColors.ANSI_BLACK + "⟶" + AnsiColors.ANSI_RESET;
+        String out = "|" + AnsiColors.ANSI_BLACK + "⟶" + AnsiColors.ANSI_RESET;
         for (Unit unit: Main.allTeam) {
             if (unit.getPos()[0] == x && unit.getPos()[1] == y){
                 if (unit.getHp() == 0){
                     out = "|" + (AnsiColors.ANSI_RED_BACKGROUND + emoji(String.valueOf(unit.getInfo().charAt(0))) + AnsiColors.ANSI_RESET);
                     break;
                 }
-                if (Main.holyTeam.contains(unit)) out = "|" + (AnsiColors.ANSI_BLUE + unit.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
-                if (!Main.darkTeam.contains(unit)) out = "|" + (AnsiColors.ANSI_GREEN + unit.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
+                if (Main.darkTeam.contains(unit)) out = "|" + (AnsiColors.ANSI_GREEN_BACKGROUND + emoji(String.valueOf(unit.getInfo().charAt(0))) + AnsiColors.ANSI_RESET);
+                if (Main.holyTeam.contains(unit)) out = "|" + (AnsiColors.ANSI_BLUE_BACKGROUND + emoji(String.valueOf(unit.getInfo().charAt(0))) + AnsiColors.ANSI_RESET);
                 break;
             }
             

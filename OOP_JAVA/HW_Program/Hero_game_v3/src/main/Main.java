@@ -19,10 +19,6 @@ public class Main {
     
     public static void main (String[] args){
 
-        // ArrayList<Unit> holyTeam = new ArrayList<>(); 
-        // ArrayList<Unit> darkTeam = new ArrayList<>();
-        // ArrayList<Unit> allTeam = new ArrayList<>();
-
         Scanner user_input = new Scanner(System.in);
         System.out.println("Press Enter to bigen.");
         user_input.nextLine(); 
@@ -36,6 +32,7 @@ public class Main {
         while (true){
             View.view();
             user_input.nextLine();
+            
             for (Unit unit: allTeam) {
                 if (holyTeam.contains(unit)) unit.step(holyTeam, darkTeam);
                 else unit.step(darkTeam, holyTeam);

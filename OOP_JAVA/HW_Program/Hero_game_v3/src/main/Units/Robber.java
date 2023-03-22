@@ -9,7 +9,7 @@ public class Robber extends Warrior { // Разбойник
 
     @Override
     public String getInfo() {
-        return "Разбойник ";
+        return "Разбойник";
     }
 
 }
